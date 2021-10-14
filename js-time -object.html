@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+		Current Time:<span id="time"></span>
+
+	<script>
+
+		window.onload=function ()
+		 {
+			// body...
+			geTime();
+		}
+		function geTime()
+		 {
+			// body...
+			var today=new Date();
+			var h=today.getHours();
+			var m=today.getMinutes();
+			var s=today.getSeconds();
+
+			m=CheckTime(m);
+			s=CheckTime(s);
+
+			document.getElementById('time').innerHTML=h+":"+m+":"+s;
+			setInterval("geTime()",1000);
+		}
+
+		function CheckTime(i)
+		 {
+			// body...
+			if (i<10)
+			 {
+			 	i="0"+i;
+			 }
+			 return i;
+		}
+
+	</script>
+	
+</body>
+</html>
